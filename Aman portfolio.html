@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aman Kumar | Developer Profile</title>
+
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<!-- AOS Animation -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth}
+body{
+background:#0a0f1e;color:#e2e8f0;overflow-x:hidden;
+}
+
+/* Moving Gradient Background */
+body::before{
+content:'';position:fixed;width:600px;height:600px;border-radius:50%;
+background:radial-gradient(circle,#22c55e33,transparent 60%);
+top:-150px;left:-150px;animation:move 14s infinite alternate;z-index:-1}
+@keyframes move{to{transform:translate(250px,250px)}}
+
+/* Cursor Glow */
+.cursor{
+width:22px;height:22px;border-radius:50%;
+position:fixed;pointer-events:none;
+background:#22c55e55;filter:blur(12px);z-index:999
+}
+
+#contact-form{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:20px
+}
+#contact-form input,
+#contact-form textarea{
+padding:12px;
+border-radius:8px;
+border:none;
+outline:none;
+background:#1e293b;
+color:#fff;
+font-size:14px
+}
+#contact-form textarea{resize:none;height:110px}
+#contact-form button{
+background:#22c55e;
+color:#000;
+padding:12px;
+border:none;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+transition:.3s
+}
+#contact-form button:hover{
+transform:scale(1.05)
+}
+
+
+/* Navbar */
+nav{
+position:fixed;top:0;width:100%;padding:18px 6%;
+display:flex;justify-content:space-between;align-items:center;
+background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:1000}
+nav ul{display:flex;gap:25px;list-style:none}
+nav a{color:#cbd5e1;text-decoration:none;transition:.3s}
+nav a:hover{color:#22c55e}
+
+/* Hero */
+.hero{
+height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.hero h1{font-size:52px;color:#fff}
+.typing{color:#22c55e;font-size:24px;height:30px;margin-top:10px}
+
+/* Section */
+section{padding:90px 6%}
+.container{max-width:1150px;margin:auto}
+.card{
+background:rgba(255,255,255,0.05);
+padding:28px;border-radius:18px;margin-top:20px;
+backdrop-filter:blur(10px);transition:.4s}
+.card:hover{transform:translateY(-8px);box-shadow:0 15px 35px #22c55e33}
+
+/* Grid */
+.grid{display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+/* Project cards */
+.project-card{
+background:rgba(0,0,0,0.4);
+padding:25px;border-radius:15px;transition:.4s}
+.project-card:hover{transform:rotateY(6deg) rotateX(4deg);box-shadow:0 15px 35px #22c55e33}
+
+/* Footer */
+footer{text-align:center;padding:30px;background:#00000060;color:#94a3b8}
+
+@media(max-width:768px){.hero h1{font-size:34px}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+<h3>Aman Kumar</h3>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">What I Do</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<h1>Hello, I'm Aman Kumar</h1>
+<div class="typing" id="typing"></div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section id="about" style="padding:100px 6%;">
+
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:60px;max-width:1200px;margin:auto;">
+
+    <!-- Photo Box -->
+    <div style="flex:1;min-width:280px;display:flex;justify-content:center;">
+      <div style="
+        width:300px;
+        height:350px;
+        border-radius:20px;
+        background:rgba(255,255,255,0.05);
+        border:1px solid rgba(34,197,94,0.5);
+        backdrop-filter:blur(12px);
+        box-shadow:0 0 40px rgba(34,197,94,0.3);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        color:#22c55e;
+        font-size:18px;
+        font-weight:500;
+        overflow:hidden;">
+        
+        <!-- Put your image here -->
+        <img src="C:\Users\Dell\Downloads\aman pic.jpeg" style="width:120%;height:100%;object-fit:cover;border-radius:20px;">
+      </div>
+    </div>
+
+    <!-- About Content -->
+    <div style="flex:1.5;min-width:300px;color:#e2e8f0;">
+      <h2 style="font-size:40px;margin-bottom:20px;color:#22c55e;">About Me</h2>
+
+      <p style="line-height:1.9;font-size:17px;color:#cbd5e1;">
+        Computer Science student with strong practical exposure to Python, Web Development,
+        and Database Management. Experienced in building real-world academic and personal
+        projects using HTML, CSS, JavaScript, and MySQL.
+      </p>
+
+      <p style="line-height:1.9;font-size:17px;margin-top:15px;color:#cbd5e1;">
+        Comfortable with data handling, logical problem solving, and continuous learning.
+        Focused on writing clean, readable code and creating responsive user interfaces
+        with structured backend logic.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- ===== END ABOUT ===== -->
+
+
+<section id="services" data-aos="fade-right">
+<div class="container">
+<h2 style="font-size:36px;color:#22c55e;text-align:center;margin-bottom:30px;">What I Do</h2>
+<div class="grid">
+<div class="card">
+<h3>Python Programming for Logic Building & Data Handling</h3>
+<p>Writing structured scripts and solving logical problems using Python.</p>
+</div>
+<div class="card">
+<h3>Responsive Web Layout Development (HTML5 & CSS3)</h3>
+<p>Creating mobile-friendly layouts with UI clarity and structure.</p>
+</div>
+<div class="card">
+<h3>Database Management with MySQL & PostgreSQL</h3>
+<p>Performing CRUD operations and managing relational data.</p>
+</div>
+<div class="card">
+<h3>Data Organization using MS Excel & Google Sheets</h3>
+<p>Applying formulas and formatting for data analysis.</p>
+</div>
+<div class="card">
+<h3>Documentation & Presentation using MS Word & PowerPoint</h3>
+<p>Preparing structured reports and presentations.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="projects" data-aos="fade-left">
+<div class="container">
+<h2 style="font-size:38px;color:#22c55e;margin-bottom:25px;text-align:center;">
+Featured Projects & Practical Work
+</h2>
+
+<div class="grid">
+<div class="project-card">
+<h3>Service Hiring System</h3>
+<p>Book local services with structured UI and interactive workflow.</p>
+</div>
+<div class="project-card">
+<h3>Weather Application</h3>
+<p>API-based real-time weather app with dynamic rendering.</p>
+</div>
+<div class="project-card">
+<h3>Expense Tracker</h3>
+<p>Tool to calculate and split group expenses during trips.</p>
+</div>
+<div class="project-card">
+<h3>Digital Notice Board</h3>
+<p>Group-based messaging system for organizations.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="education" data-aos="zoom-in">
+<div class="container">
+<h2>Education</h2>
+<div class="card">M.Sc. Computer Science – Pursuing (2025)</div>
+<div class="card">BCA – IG Govt PG College, Tohana (2022–2025)</div>
+<div class="card">12th – Govt. Senior Secondary School, Uklana Mandi (2021–2022)</div>
+</div>
+</section>
+
+<!-- <section id="contact" data-aos="fade-up">
+<div class="container card">
+<h2>Contact</h2>
+<p>Email: kumaraman3354@gmail.com<br>
+Phone: +91 9518176615<br>
+Location: Hisar, Haryana</p>
+</div>
+</section> -->
+
+<!-- ===== PREMIUM FOOTER START ===== -->
+<footer style="margin-top:80px;background:rgba(0,0,0,0.65);backdrop-filter:blur(10px);padding:60px 6% 30px 6%;color:#e2e8f0;border-top:1px solid rgba(34,197,94,0.4);">
+
+  <!-- Professional Line -->
+  <div style="text-align:center;margin-bottom:40px;font-size:18px;color:#22c55e;font-weight:500;">
+    Building clean interfaces, structured databases, and logical solutions through code.
+  </div>
+
+  <!-- 3 Column Layout -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;max-width:1100px;margin:auto;">
+
+    <!-- About -->
+    <div>
+      <h3 style="margin-bottom:15px;color:#fff;">Aman Kumar — Python & Web Developer</h3>
+      <p style="line-height:1.7;color:#cbd5e1;">
+        Passionate Computer Science student focused on building responsive interfaces,
+        managing structured databases, and solving real-world problems through code.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 style="margin-bottom:15px;color:#fff;">Quick Links</h3>
+      <p><a href="#about" style="color:#cbd5e1;text-decoration:none;">About</a></p>
+      <p><a href="#services" style="color:#cbd5e1;text-decoration:none;">What I Do</a></p>
+      <p><a href="#projects" style="color:#cbd5e1;text-decoration:none;">Projects</a></p>
+      <p><a href="#education" style="color:#cbd5e1;text-decoration:none;">Education</a></p>
+      <p><a href="#contact" style="color:#cbd5e1;text-decoration:none;">Contact</a></p>
+    </div>
+
+    <!-- Contact & Social -->
+<div>
+  <h3 style="margin-bottom:15px;color:#fff;">Send Message</h3>
+  <form id="contact-form">
+    <input type="text" name="from_name" placeholder="Your Name" required>
+    <input type="email" name="reply_to" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+
+    <div>
+      <h3 style="margin-bottom:15px;color:#fff;">Contact</h3>
+      <p>Email: kumaraman3354@gmail.com</p>
+      <p>Phone: +91 9518176615</p>
+      <p>Location: Tohana, Haryana</p>
+      <div style="margin-top:10px;">
+        <a href="https://github.com/AmanSain07" target="_blank" style="margin-right:10px;color:#22c55e;">
+          <i class="fab fa-github fa-lg"></i>
+        </a>
+        <a href="https://linkedin.com/in/aman-sain-b5329224b" target="_blank" style="color:#22c55e;">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </a>
+      </div>
+      <div style="margin-top:15px;">
+        <a href="resume.pdf" download
+           style="background:#22c55e;color:#000;padding:8px 18px;border-radius:20px;text-decoration:none;font-weight:600;">
+          Download Resume
+        </a>
+      </div>
+      <p style="margin-top:15px;">Languages: Hindi | English</p>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div style="text-align:center;margin-top:50px;font-size:14px;color:#94a3b8;">
+    © 2026 Aman Kumar. All rights reserved.
+  </div>
+
+</footer>
+<!-- ===== PREMIUM FOOTER END ===== -->
+```
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({duration:1200});
+
+// typing effect
+const words=["Frontend Developer","Python Developer","Database Enthusiast"];
+let i=0,j=0,del=false;
+function type(){
+let w=words[i];
+document.getElementById("typing").textContent=w.substring(0,j);
+if(!del&&j<w.length){j++;setTimeout(type,100)}
+else if(del&&j>0){j--;setTimeout(type,50)}
+else{del=!del;if(!del)i=(i+1)%words.length;setTimeout(type,700)}
+}
+type();
+
+// cursor glow
+const cursor=document.getElementById("cursor");
+document.addEventListener("mousemove",e=>{
+cursor.style.top=e.clientY+"px";
+cursor.style.left=e.clientX+"px";
+});
+</script>
+<script>
+(function(){
+  emailjs.init("n-iuPbs-kM1uRIW-D");
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  emailjs.sendForm("service_dwgdg7k", "template_giilzui", this)
+  .then(function(){
+      alert("✅ Message Sent Successfully!");
+      document.getElementById("contact-form").reset();
+  })
+  .catch(function(error){
+      alert("❌ Failed to send message");
+      console.log(error);
+  });
+});
+</script>
+
+
+</body>
+</html>
